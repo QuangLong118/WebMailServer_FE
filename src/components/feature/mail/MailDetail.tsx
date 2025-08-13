@@ -23,7 +23,7 @@ interface MailDetailProps{
 }
 
 export default function MailDetail({type,mail,onClose}:MailDetailProps){
-    const API_BASE_URL = 'http://backend:8000/api';
+    const API_BASE_URL = process.env.NEXT_PUBLIC_API_BASE_URL;
     async function downloadFile(filename: string) {
         try {
             const response = await fetch(`${API_BASE_URL}/download/${filename}`, {
